@@ -4,11 +4,12 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "dl_bucket_prefix" {
-  description = "The prefix for s3 buckets within data lake"
-  type        = string
-  default     = "com.bb.data"
+variable "s3_bucket_name" {
+  description = "The names of s3 buckets within data lake"
+  type        = list
+  default = [
+    "com.birchbox.data.landing",
+    "com.birchbox.data.refined",
+    "com.birchbox.data.project"
+  ]
 }
-
-
-
